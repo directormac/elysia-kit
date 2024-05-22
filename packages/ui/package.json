@@ -1,0 +1,26 @@
+{
+  "name": "ui",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "node": "./src/index.ts",
+      "svelte": "./src/index.ts"
+    },
+    "./components": {
+      "import": "./src/components/index.ts",
+      "node": "./src/components/index.ts",
+      "svelte": "./src/components/index.ts"
+    }
+  },
+  "dependencies": {
+    "svelte": "^5.0.0-next.137",
+    "tsconfig": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

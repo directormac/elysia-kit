@@ -1,0 +1,21 @@
+{
+  "name": "shared",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "node": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@elysiajs/eden": "^1.0.14",
+    "tsconfig": "workspace:*",
+    "api": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

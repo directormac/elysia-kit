@@ -1,0 +1,46 @@
+{
+	"name": "api",
+	"version": "0.0.1",
+	"type": "module",
+	"main": "./src/index.ts",
+	"exports": {
+		".": {
+			"import": "./src/index.ts",
+			"node": "./src/index.ts",
+			"module": "./src/index.ts"
+		},
+		"./types": {
+			"import": "./src/types/index.ts",
+			"node": "./src/types/index.ts"
+		}
+	},
+	"scripts": {
+		"dev": "bun run --watch src/index.ts",
+		"build": "bun ./build.ts",
+		"start": "NODE_ENV=production bun dist/index.js",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"tsconfig": "workspace:*"
+	},
+	"devDependencies": {
+		"@elysiajs/cors": "^1.0.2",
+		"@elysiajs/static": "^1.0.3",
+		"@elysiajs/stream": "^1.0.2",
+		"@elysiajs/swagger": "^1.0.5",
+		"@lucia-auth/adapter-drizzle": "^1.0.7",
+		"@types/bun": "latest",
+		"bun-plugin-dts": "^0.2.3",
+		"date-fns": "^3.6.0",
+		"drizzle-orm": "^0.30.10",
+		"drizzle-typebox": "^0.1.1",
+		"elysia": "^1.0.23",
+		"logestic": "^1.2.0",
+		"lucia": "^3.2.0",
+		"oslo": "^1.2.0",
+		"postgres": "^3.4.4"
+	},
+	"peerDependencies": {
+		"typescript": "^5.4.5"
+	}
+}
