@@ -13,4 +13,10 @@ const injectApiHandle: Handle = async ({ event, resolve }) => {
 	return resolve(event);
 };
 
+const injectSessionHandle: Handle = async ({ event, resolve }) => {
+	// const { user, session } = await event.locals.api.userContext.get();
+
+	return resolve(event);
+};
+
 export const handle = sequence(injectApiHandle);

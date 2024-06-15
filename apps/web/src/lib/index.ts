@@ -1,6 +1,6 @@
 // place files you want to import through the `$lib` alias in this folder.
 import { treaty } from '@elysiajs/eden';
-import { type AppType } from 'shared';
+import type { AppType, User, Session } from 'shared';
 import { PUBLIC_API_URL } from '$env/static/public';
 
 const api = treaty<AppType>(PUBLIC_API_URL);
@@ -23,4 +23,4 @@ const getClient = ({ fetch = globalThis.fetch }: GetClientOptions = {}) => {
 };
 
 export { api, getClient };
-export type { AppType, ClientType };
+export type { AppType, ClientType, Session, User };

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { currentTime, createTodosStore, toastsStore } from '$lib/stores';
-	import { Hero } from 'ui/components';
 
 	let { data } = $props();
 
