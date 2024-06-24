@@ -1,42 +1,41 @@
 {
-  "name": "elysia-kit",
-  "author": {
-    "name": "Artifex",
-    "url": "https://mkra.dev",
-    "email": "mac@mkra.dev"
-  },
-  "private": true,
-  "scripts": {
-    "start": "bun run './apps/api' start",
-    "dev": "bun --filter './apps/**' dev",
-    "build": "bun --filter './apps/**' build",
-    "test": "bun --filter './apps/**' test",
-    "clean": "rm -f bun.lockb",
-    "update-deps": "bunx npm-check-updates --root --format group -i",
-    "lint": "bun --filter '*' lint",
-    "format": "bun --filter '*' format --write .",
-    "db:check": "drizzle-kit check",
-    "db:drop": "drizzle-kit drop",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "db:pull": "drizzle-kit introspect",
-    "db:push": "drizzle-kit push",
-    "db:seed": "tsx ./seed.ts",
-    "db:studio": "drizzle-kit studio --verbose",
-    "db:up": "drizzle-kit up"
-  },
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
-  "devDependencies": {
-    "@sveltejs/adapter-node": "^5.0.1",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.2.3",
-    "prettier-plugin-tailwindcss": "^0.5.14"
-  },
-  "dependencies": {
-    "drizzle-kit": "^0.21.2"
-  }
+	"name": "elysia-kit",
+	"author": {
+		"name": "Artifex",
+		"url": "https://mkra.dev",
+		"email": "mac@mkra.dev"
+	},
+	"private": true,
+	"scripts": {
+		"start": "bun run './apps/api' start",
+		"dev": "bun --filter './apps/**' dev",
+		"build": "bun --filter './apps/**' build",
+		"test": "bun --filter './apps/**' test",
+		"clean": "rm -f bun.lockb",
+		"update-deps": "bunx npm-check-updates --root --format group -i",
+		"lint": "bun --filter '*' lint",
+		"format": "bun --filter '*' format --write .",
+		"db:check": "drizzle-kit check",
+		"db:drop": "drizzle-kit drop",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:pull": "drizzle-kit introspect",
+		"db:push": "drizzle-kit push",
+		"db:seed": "tsx ./seed.ts",
+		"db:studio": "drizzle-kit studio --verbose",
+		"db:up": "drizzle-kit up"
+	},
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
+	"devDependencies": {
+		"eslint": "^8.57.0",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.5.14"
+	},
+	"dependencies": {
+		"drizzle-kit": "^0.21.4"
+	}
 }
