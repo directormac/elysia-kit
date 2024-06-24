@@ -26,7 +26,11 @@ export const userFormSchema = createInsertSchema(user, {
 
 export const authFormSchema = t.Object({
 	key: t.Union([
-		t.String({ format: 'email', error: 'Invalid email', default: '' }),
+		t.String({
+			format: 'email',
+			error: 'Invalid email',
+			default: ''
+		}),
 		t.String({ error: 'Username / Email is Required' })
 	]),
 	password: t.String({

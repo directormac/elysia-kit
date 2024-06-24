@@ -1,4 +1,4 @@
-import Elysia from 'elysia';
+import Elysia, { t } from 'elysia';
 
 export const errorMiddlware = new Elysia().onError(
 	{ as: 'global' },
@@ -6,18 +6,44 @@ export const errorMiddlware = new Elysia().onError(
 		switch (code) {
 			case 'VALIDATION':
 				const values = error.value as Record<string, string>;
-				const err = error.validator.Errors(error.value).First();
+				// const err = error.validator.Errors(error.value).First();
+				//
+				// console.log(error.all);
 
-				console.log(err);
+				const formattedErrors = {
+					field: error.all.reduce(
+						(acc, error) => {
+							const fieldPath = error.path.slice(1);
+							const errorMessages = [];
 
-				console.log(error.all.map(({ message }) => message + '\n'));
+							// Extract messages from the "anyOf" schema options
+							if (error.schema?.anyOf) {
+								for (const option of error.schema.anyOf) {
+									if (option.error) {
+										errorMessages.push(option.error);
+									}
+								}
+							}
+
+							if (!errorMessages.includes(error.message)) {
+								errorMessages.push(error.message);
+							}
+
+							acc[fieldPath] = errorMessages;
+							return acc;
+						},
+						{} as Record<string, string[]>
+					)
+				};
+
+				console.log(formattedErrors);
 
 				return {
-					form: {
+					field: {
 						...values,
 						password: ''
 					},
-					errors: error.all
+					errors: formattedErrors
 				};
 		}
 	}
