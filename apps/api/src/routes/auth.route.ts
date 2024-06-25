@@ -13,7 +13,7 @@ export const passcheck = t.Object({
 	password
 });
 
-export const auth = new Elysia({ prefix: 'auth' }).guard((app) =>
+export const auth = new Elysia({ prefix: 'auth/' }).guard((app) =>
 	app
 		.model({
 			singup: t.Omit(userFormSchema, ['id', 'createdAt', 'role', 'updatedAt']),

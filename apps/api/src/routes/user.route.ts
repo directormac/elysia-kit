@@ -9,7 +9,7 @@ const idParams = t.Object({
 	id: t.String()
 });
 
-export const users = new Elysia({ prefix: 'users' }).guard((app) =>
+export const users = new Elysia({ prefix: 'users/' }).guard((app) =>
 	app
 		.use(authMiddleWare)
 		.use(errorMiddlware)
